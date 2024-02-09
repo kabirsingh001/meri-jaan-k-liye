@@ -1,124 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Propose Day</title>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-image: url('https://c4.wallpaperflare.com/wallpaper/296/729/237/5c1c96c15ca60-wallpaper-preview.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pacifico', cursive;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/859/779/682/minimalistic-valentines-hd-wallpaper-preview.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-  .message-box {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #DB7093;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+        .title {
+            font-size: 3em;
+            font-weight: bold;
+            color: #DB7093;
+        }
 
-  h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5em;
-    color: #6a515e;
-    margin: 20px 0;
-  }
+        .sub-title {
+            font-family: 'Arial', sans-serif;
+            font-size: 1em;
+            color: black;
+            position: absolute;
+            top: 110px; /* Adjust to place below the main title */
+        }
 
-  p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.25em;
-    color: #6a515e;
-    line-height: 1.6;
-  }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px; /* Space below the subtitles */
+        }
 
-  .button {
-    padding: 10px 20px;
-    margin: 10px;
-    border: 2px solid #DB7093;
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    background-color: white;
-    color: #6a515e;
-  }
+        .card {
+            width: 140px;
+            height: 180px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #DB7093; /* Border color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            transition: transform 0.2s, filter 0.3s;
+            cursor: pointer;
+        }
 
-  .button:hover {
-    background-color: #DB7093;
-    color: white;
-  }
+        .card:hover:not(.locked) {
+            transform: translateY(-5px);
+        }
 
-  .love-message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #DB7093;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-family: 'Pacifico', cursive;
-    font-size: 1.5em;
-    z-index: 1000;
-  }
-</style>
+        .card.locked::after {
+            content: '🔒';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #DB7093;
+        }
+
+        .card.locked {
+            cursor: not-allowed;
+            filter: blur(1px);
+        }
+
+        .date {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.7em;
+            color: #555;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+    </style>
 </head>
 <body>
 
-<div class="message-box">
-  <h1>Happy Propose Day Meri Jaan</h1>
-  <p>
-    My love, my princess, my xyz , on this special day, I promise to hold your hand through all of life's journeys, 
-    and support you in every decision. Stay loyal and be beside you forever, even when the world will be against us. 
-    I shall always be by your side, regardless of anything and everything. So, will you be mine forever?
-  </p>
+<h1 class="title">Happy Valentine's Week</h1>
+<div class="sub-title">From Kabir to Harsha &lt;3</div>
+
+<div class="card-container">
+    <div class="card">Rose Day<div class="date">7th Feb</div></div>
+    <a href="propose-day.html" class="card">Propose Day<div class="date">8th Feb</div></a>
+    <div class="card locked">Chocolate Day<div class="date">9th Feb</div></div>
+    <!-- Add the rest of the cards as necessary -->
 </div>
-
-<button class="button" id="yesButton">Yes</button>
-<button class="button" id="noButton">No</button>
-
-<script>
-  document.getElementById('yesButton').addEventListener('click', function() {
-    const loveMessage = document.createElement('div');
-    loveMessage.textContent = 'Yayyy! I LOVE UUUU';
-    loveMessage.classList.add('love-message');
-    document.body.appendChild(loveMessage);
-    // Remove the message after a few seconds
-    setTimeout(() => {
-      document.body.removeChild(loveMessage);
-    }, 5000);
-  });
-
-  document.getElementById('noButton').addEventListener('mouseover', function(event) {
-    const noButton = event.target;
-    const newX = Math.random() * (window.innerWidth - noButton.offsetWidth);
-    const newY = Math.random() * (window.innerHeight - noButton.offsetHeight);
-    noButton.style.position = 'fixed';
-    noButton.style.left = newX + 'px';
-    noButton.style.top = newY + 'px';
-  });
-</script>
 
 </body>
 </html>
